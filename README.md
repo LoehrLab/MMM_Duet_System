@@ -1,9 +1,16 @@
 <h1>MMM Duet System</h1>
+
+
 <h2>Welcome to the MMM Duet System open access build instructions.</h2>
 
- 
+
 
 <p>On this site, you will find instructions for how to create your own MMM Duet System. We provide instructions for users who would like to build and use the devices to play musical duets together. We also provide information for researchers and developers who might like to use the MMM Duet System in their research and/or further develop the MMM Duet System. </p>
+
+
+### [MMM Duet System Hardware](./MMM_Duet_System_Hardware/README.md)
+### [MMM Duet System Software](./MMM_Duet_System_Software/README.md)
+### [Creating Duets from Commercial Reocrdings (FIX!!!!)](https://pages.github.com/)
 
 <h3><u>Instructions for users who would like to build and use the devices:</u></h3>
 You will need the following software packages.
