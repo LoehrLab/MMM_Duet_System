@@ -42,7 +42,7 @@ This list is for 2 devices
 
 14. (2) Momentary switches (https://www.amazon.ca/gp/product/B07DS8VSZ1/)
 
-<h4><b>Supplies</b><h4>
+<h3><b>Supplies</b><h3>
 
 15. 0.6mm Solder (https://www.amazon.ca/gp/product/B071XVPJVX/)  
 
@@ -54,7 +54,7 @@ This list is for 2 devices
 18. 22AWG Solid Core Wire (https://www.digikey.ca/en/products/detail/adafruit-industries-llc/1311/6198255)
 19. Solder Seal Butt Connector (https://www.amazon.ca/NORJIN-Connectors-Waterproof-Electrical-Automotive/dp/B09WQWQQW9/)
 
-<h4><b>Tools</b><h4>
+<h3><b>Tools</b><h3>
 
 15. Wire Crimper 
 16. Voltage Meter (optional) 
@@ -107,10 +107,10 @@ Below is the wiring schematic. Rather than wire directly to the ESP32 board, we 
 * Connecting the wires to MTA 100 Connector Assembly can be challenging. Rather than acquiring the specialized insertion tool, we used the spanner bit of our screwdriver set.
 * We recommend using a volt meter to check conductivity with each connection. 
 
-### Wiring Diagram
+#### **Wiring Diagram**
 ![Wiring Diagram for MMM Duet System.](./images/hardware_schematic.png)
 
-### Breadboard Diagram
+#### **Breadboard Diagram**
 The breadboard diagram below can be used to furhter facilitate conceptualizing of the wiring and testing prior to soldering. 
 ![Breadboard Diagram for MMM Duet System.](./images/hardware_breadboard.png) 
 
@@ -119,7 +119,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 <h3><b>Step 3: Put all the pieces together</b><h3>
 Follow the instructions below to create each MMM Duet System controller.
 <table>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/01.png" width="100%" height="100%"/>
 </td>
@@ -133,7 +133,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/02.png" width="100%" height="100%"/>
 <img src="../MMM_Duet_System_Hardware/images/03.png" width="100%" height="100%"/>
@@ -153,7 +153,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/04.png" width="100%" height="100%"/>
 <img src="../MMM_Duet_System_Hardware/images/05.png" width="100%" height="100%"/>
@@ -167,7 +167,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/06.png" width="100%" height="100%"/>
 </td>
@@ -177,7 +177,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/07.png" width="100%" height="100%"/>
 </td>
@@ -190,7 +190,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/08.png" width="100%" height="100%"/>
 </td>
@@ -206,7 +206,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/09.png" width="100%" height="100%"/>
 </td>
@@ -216,7 +216,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </ul>
 </td>
 </tr>
-<tr>
+<tr valign="top">
 <td width="40%">
 <img src="../MMM_Duet_System_Hardware/images/10.png" width="100%" height="100%"/>
 </td>
