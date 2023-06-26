@@ -101,7 +101,7 @@ https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establis
 
 Below is the wiring schematic. Rather than wire directly to the ESP32 board, we chose to wire to a set of headers soldered to a 30mmx70mm protoboard to prevent damaging the ESP32 board with any soldering mistakes and facilitate reuse of the ESP32 board within the lab.
 
-#### Special considerations and recommendations:
+### Special considerations and recommendations:
 * We terminated the ground and positive wires going to the momentary switch with a male spade connector to facilitate connection assembly (optional). Otherwise, the switch can be connected to the protoboard directly. 
 * The LED is joined to the connecting wires with a solder seal butt connector. 
 * Connecting the wires to MTA 100 Connector Assembly can be challenging. Rather than acquiring the specialized insertion tool, we used the spanner bit of our screwdriver set.
@@ -115,7 +115,9 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 ![Breadboard Diagram for MMM Duet System.](./images/hardware_breadboard.png) 
 
 
-### 
+
+<h3><b>Step 3: Put all the pieces together</b><h3>
+Follow the instructions below to create each MMM Duet System controller.
 <table>
 <tr>
 <td width="40%">
