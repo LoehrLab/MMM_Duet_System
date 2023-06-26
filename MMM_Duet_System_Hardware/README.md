@@ -1,7 +1,6 @@
-<h1>MMM Duet System</h1>
-<h2>MMM Duet System Hardware</h2>
+<h1>MMM Duet System Hardware</h1>
 
-<h3><u>Overview:</u></h3>
+<h2><u>Overview:</u></h2>
 Here are the steps to follow to build the hardware for the MMM Duet System.
 <ol>
 <li>Purchase items in the Shopping List file.</li>
@@ -10,10 +9,10 @@ Here are the steps to follow to build the hardware for the MMM Duet System.
 </ol>
 
 
-<h3>A. Shopping List</h3>
+<h2>A. Shopping List</h2>
 
 This list is for 2 devices
-<h4><b>Parts</b><h4>
+<h3><b>Parts</b><h3>
 
 1. (2) Adafruit Huzzah32 – ESP32 Feather Board (pre-soldered) (https://www.digikey.ca/en/products/detail/adafruit-industries-llc/3591/8119805) This board is slightly more expensive than other ESP32 boards but it was chosen because it comes with a battery charger, JST connection, Wi-Fi and Bluetooth Classic/LE support all on one board. </li>
 
@@ -63,8 +62,43 @@ This list is for 2 devices
 18. Hot glue gun (optional) 
 19. Heat gun 
 
-<h3>B. Assembly Instructions</h3>
-<h4><b>Step 1: Load the Arduino sketch onto the ESP32 board. </b><h4>
+<h2>B. Assembly Instructions</h2>
+<h3><b>Step 1: Load the Arduino sketch onto the ESP32 board. </b><h3>
+The following instructions explain how to load the Arduino sketch onto the ESP32 Board. We used the Arduino IDE (Integrated Development Environment; see below) due to our familiarity with the software and broad community support.  
+
+1. **Install Drivers**
+To load the sketch onto the ESP32 board, you will need to establish a ‘serial connection’ with the board via a ‘COM’ port. To do so, download and install the necessary drivers onto the computer you will use to upload sketch to the board. For a detailed description please visit the manufacturer’s website: 
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html 
+
+- CP210x Windows/Mac OSX Driver https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers 
+
+- FTDI Chip VCP Driver https://ftdichip.com/drivers/vcp-drivers/ 
+
+2. **Set up the Arduino IDE**
+
+- Download and install the Arduino IDE (https://www.arduino.cc/en/software ) 
+
+- Open the Arduino IDE software, then go to Tools and then Manage Libraries 
+- Search for and install these libraries: 
+    - Adafruit BusIO by Adafruit 
+    - ArduinoOSC by hidekital 
+- Add the board manager 
+    - Under File then Preferences, add the following in the text field for Additional Board Manager URLS:
+    https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+
+3. **‘Flash’ (Arduino’s term for ‘upload’) the sketch onto the board**
+- Under Tools, select Board, then ESP32 Arduino, then Adafruit ESP32 Feather 
+- Plug the USB cable into the board and the computer that you are using to upload the sketch.  
+-Under Tools, select Port, and then select the appropriate COM port. To find the right port: 
+    - On PC, open the Device Manager and then expand Ports (COM & LPT). The correct port is listed as Silicon Labs CP210x USB to UART Bridge. 
+
+- (Optional) Change the name of the bluetooth controller to avoid confusion with two devices with the same name (e.g., to MMM_Box1). 
+
+- Under Sketch, select Upload to upload the sketch to the ESP32 board.  
+
+
+<h3><b>Step 2: Wiring </b><h3>
+
 Below is the wiring schematic. Rather than wire directly to the ESP32 board, we chose to wire to a set of headers soldered to a 30mmx70mm protoboard to prevent damaging the ESP32 board with any soldering mistakes and facilitate reuse of the ESP32 board within the lab.
 
 #### Special considerations and recommendations:
@@ -80,10 +114,12 @@ Below is the wiring schematic. Rather than wire directly to the ESP32 board, we 
 The breadboard diagram below can be used to furhter facilitate conceptualizing of the wiring and testing prior to soldering. 
 ![Breadboard Diagram for MMM Duet System.](./images/hardware_breadboard.png) 
 
+
+### 
 <table>
 <tr>
 <td width="40%">
-<img src="https://github.com/LoehrLab/MMM_Duet_System/blob/568558098909556042b545fceaf2eb0421acb759/MMM_Duet_System_Hardware/images/01.png" width="100%" height="100%"/>
+<img src="../MMM_Duet_System_Hardware/images/01.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -97,6 +133,8 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/02.png" width="100%" height="100%"/>
+<img src="../MMM_Duet_System_Hardware/images/03.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -115,6 +153,8 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/04.png" width="100%" height="100%"/>
+<img src="../MMM_Duet_System_Hardware/images/05.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -127,6 +167,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/06.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -136,6 +177,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/07.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -148,6 +190,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/08.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -163,6 +206,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/09.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
@@ -172,6 +216,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 </tr>
 <tr>
 <td width="40%">
+<img src="../MMM_Duet_System_Hardware/images/10.png" width="100%" height="100%"/>
 </td>
 <td width="60%">
 <ul>
