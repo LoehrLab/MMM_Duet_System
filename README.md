@@ -1,4 +1,4 @@
-<h1> MMM_Duet_System</h1>
+<h1>MMM Duet System</h1>
 <h2>Welcome to the MMM Duet System open access build instructions.</h2>
 
  
