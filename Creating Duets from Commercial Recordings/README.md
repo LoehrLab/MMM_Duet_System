@@ -31,12 +31,12 @@ As the link states, to run the program, please type:
 You will need to replace `PATH_TO_AUDIO_FILE_1` with the name of the path to the audio file in your computer. On a mac you can do this by right-clicking on the file name, and once it has opened the list of commands, press the option key, which will bring up the option for copy ___ as Pathname. Choose this and insert it into the text above instead of `PATH_TO_AUDIO_FILE_1`
 
 ## Instructions
-udiofiles of songs can be separated, giving one player the vocals and some of the instruments, the rest of the instruments (and sometimes the other vocals) given to the other player. We have used a number of different methods for ‘source separation’, but the most recent method that we have been following is **Demucs Music Source Separation** (with instructions on how to use this above).  
+Audiofiles of songs can be separated, giving one player the vocals and some of the instruments, the rest of the instruments (and sometimes the other vocals) given to the other player. We have used a number of different methods for ‘source separation’, but the most recent method that we have been following is **Demucs Music Source Separation** (with instructions on how to use this above).  
 
-Once made, the audio files need to be stored in the **MMM_Project\media folder**. Follow the instructions in section x to upload them into the Max patch. 
+Once made, the audio files need to be stored in the **MMM_Project\media** folder. Follow the instructions in section x to upload them into the Max patch. 
 
 
-**Song Library**
+### **Song Library**
 
 The song library is stored on textfiles outside of the patch and is referred to whenever a player opens the dropdown menu (listed as songlist-alphabetical.txt, songlist-year.txt, and songlist-tempo.txt). Here is an example from songlist-alphabetical.txt:
 ![Screen shot of a the song list](./images/songlist.png)

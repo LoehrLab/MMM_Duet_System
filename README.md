@@ -10,7 +10,8 @@
 
 ### [MMM Duet System Hardware](./MMM_Duet_System_Hardware/README.md)
 ### [MMM Duet System Software](./MMM_Duet_System_Software/README.md)
-### [Creating Duets from Commercial Reocrdings (FIX!!!!)](https://pages.github.com/)
+### [Creating Duets from Commercial Recordings](./Creating_Duets_from_Commercial_Recordings/README.md)
+
 
 <h3><u>Instructions for users who would like to build and use the devices:</u></h3>
 You will need the following software packages.

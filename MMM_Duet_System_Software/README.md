@@ -88,7 +88,7 @@ The MMM Patch currently takes the serial output from the microcontroller as its 
 
 Currently, whenever the recording function is enabled and a song is played, 4 textfiles are created. One contains the raw data coming from the musicbox1, one the raw data of musicbox 2, another containing the data of musicbox 1 after being smoothed by the smoothing functions, another containing the smoothed data of musicbox 2 (that matches the sounding result of the actions). The raw textfiles are named after the time of the performance, their musicbox # (the left musicbox is musicbox1 and the right musicbox is musicbox2), whether they were in solo or duet mode, the degree of smoothing assistance # during the song, the spinning speed # of that musicbox, and the song number. The smoothed textfiles are the same except they start with the word smooth. In addition to the timing information embedded within each file is each stop-point that has occurred in either partner’s part, and each time that either part has been moved to be realigned the other part.  
 
-<u>Bluetooth Port Selection & Parsing </u>
+### <u>Bluetooth Port Selection & Parsing </u>
 ![Screenshot of Bluetooth Port Selection & Parsing subpatch](./images/port_selection.png) 
 
 ## B. MUSIC SELECTION COMPONENTS:
@@ -98,7 +98,7 @@ This subpatch uses text files that lists a) the accompaniment wav file of the so
 
  
 
-For people who want to add their own songs to the system, please go to section _ of this document. 
+For people who want to add their own songs to the system, please go see [Creating Duets from Commercial Recordings](https://github.com/LoehrLab/MMM_Duet_System/tree/main/Creating%20Duets%20from%20Commercial%20Recordings#creating-duets-from-commercial-recordings). 
 ## C. DUET FACILITATION COMPONENTS:
 The following components help players synchronize the duets together. Each component can be set to a different level to adjust duet playing difficulty (making it easier or harder to stay in synchrony with the partner). These components were implemented to allow for satisfying duet performance across a wide variety of individual differences in performance ability (e.g., different musical skills, motor constraints, etc.).  
 ### <u>Device Speed Calibration (MMM_patch section D)</u>
@@ -110,13 +110,13 @@ The subpatch SpinSpeedCalibration serves two functions.
 
 ![Screenshot of spin speed calibration subpatch](./images/speed_calibration.png)
 
-### <u>Speed Correction (Smoothing Lvl 1) - (MMM_Patch section G)</u>
+### <u>Speed Correction (Smoothing Lvl 1) - (MMM_Patch section E)</u>
 
 A large role of the subpatch Smoov is to protect against dividing by zero. This subpatch uses a feedback loop to diminish the distance of outlier datapoints from the mean. In essence, it keeps a running mean of the last 100 datapoints in order to bring the newest datapoint closer to the running mean. This subpatch was especially important in the early versions of the patch where we were inputting rotational information into the MMM Patch. As we improve the regularity and latency of the input to the MMM Patch this subpatch will become less important, and its aggressiveness should be adjusted accordingly. 
 
 ![Screenshot of speed correction](./images/speed_correction.png)
 
-### <u>Smoothing Correction (Section F)</u>
+### <u>Smoothing Correction (MMM_Patch Section G)</u>
 
 The purpose of the SmoothingFunction subpatch is to smooth the speed of their musical output relative to the player’s spinning speed. With no smoothing, the speed of the musical output varies with the speed of the player’s spinning. With high levels of smoothing, the speed of the musical output remains stable even if the player’s spinning speed is variable. 
 
@@ -127,20 +127,20 @@ Different levels of smoothing vary the m and n of the above function. Here is an
 
 ![Smoothing function curves](./images/smoothing.png)
 
-### <u>Automatic realignment (MMM_Patch Section A component Auto-adjust):</u>
+### <u>Automatic realignment (MMM_Patch Section A, component Auto-adjust):</u>
 
 The purpose of the Auto-adjust subpatch is to allow for automatic realignment of the two players’ parts if they drift so far apart that they are unlikely to be able to realign with each other simply by adjusting their own spinning speeds. Feedback from early users indicated that moving the accompaniment part to the melody part is less noticeable, so this is always done. Currently, whenever the participants get off by more than 1.5 seconds (66150 samples at 44100) the parts are automatically realigned. The parts are also realigned whenever the parts get off by over 1 second (44100 samples) for 1 second, and off by over .5 seconds (22050 samples) for over 2 seconds (It may appear that the < sign is reversed for these 2 in the patch but they are correct as clocker restarts every time it is banged). The musicbox that has the melody part is known through the r lr function. 
 ![Screenshot of auto-adjust](./images/auto_adjust.png)
 
 In terms of technical implementation of this function, the current sample of the audiofile can be known by tracking the sig~ function, (this tracking is shown in section H. Player switching), summing the samples that have occurred in the signal accumulator, and taking snapshots of this running total. These snapshots are then shown in message boxes (NB: mbox 1 snapshot is shown on the right of the patch while mbox 2 is shown on the left – this has been done as the value in these message boxes become the new value for the other part when realignment is done). E.g. When a realignment request is made to move mbox1 to mbox2, the current sample of mbox2 is fed back into the signal accumulator (**+=~**) of mbox1.  
 
-### <u>Bluetooth Code Processing:</u>
+### <u>Bluetooth Code Processing (MMM_Patch Section I):</u>
 
 As the patch doesn’t really know the spinning speed of the musicboxes, it doesn’t really know when players have stopped mid-song. All the MMM patch has is the latest information given to it, which is the last duration recorded between the last 2 points it has seen from the musicbox (which it estimates the current speed from – see spinning speed above). Therefore, an audio-off has been added to allow the audiofile to stop playing when it hasn’t received any new input information. The component takes the smoothingRaw value and outputs it as audio-off. When the player is spinning, they are the same. After 320 msec of inactivity, the controller sends a the ASCII characters “/D”. After 640 msec, the controller sends out “/E”. After another 320 msec, at 960 msec, the controller sends out “/F”. The MMM Patch registers this as the ASCII numbers 68, 69, 70 respectively.  When 68, is received, the last smoothingRaw value transitions to 0.3 over 330 msec becoming vidrate. When 69 is received, it transitions from 0.3 to 0. When 70 is received, nothing happens, but this functions to stop the repeated triggering of the transition from 0.3 to 0. 
 
 ![Screenshot of bluetooth code processing](./images/bluetooth_processing.png)
 
-### <u>Signal Processing Component:</u>
+### <u>Signal Processing Component (MMM_Patch Section J):</u>
 
 It takes all of the inputs from the components described above (e.g., speed calibration, smoothing correction, song selection, etc.) and uses that information to add the song to the player and adjust the speed and amplitude of the audio file in the music player. 
 
@@ -149,13 +149,13 @@ One aspect of the Signal Processing component that hasn’t been described elsew
 ## C. VISUAL COMPONENTS:
 The following components allow the users to display, or not, visual feedback about how well their performances are aligning together. 
 
-### <u>Visualizations: </u>
+### <u>Visualizations (MMM_Patch Section B):</u>
 
 Early users sometimes over-focused on the visual performance feedback to ensure they were doing the task ‘correctly’, and found that this interfered with ability to enjoy performing the duets with their partner. This subpatch offers users the option was added to hide the dynamic visual feedback from the screen and instead display a static image. This is either activated through a toggle or through a keyboard shortcut. The static image is determined by the file specified in the Song Library files (see Song Library section below). 
 
 ![Screenshot of visualization toggle](./images/visualization_toggle.png)
 
-### <u>Auto Solo or Duet mode (p practice_): </u>
+### <u>Auto Solo or Duet mode (p practice): </u>
 
 The dynamic visual feedback works either as a comparison between a player and the original song speed (solo mode) or as a comparison between a player and their partner. This function borrows from the auto-stop function to know whether both players are playing or not. The default state is duet mode, but it moves the visual feedback into solo mode when one of the players has not been heard from in over 660 msec. Similar to the auto-stop function, duet mode is reactivated immediately as soon as there is feedback that both players are playing at the same time. 
 

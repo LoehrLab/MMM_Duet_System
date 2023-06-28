@@ -125,7 +125,7 @@ Follow the instructions below to create each MMM Duet System controller.
 </td>
 <td width="60%">
 <ul>
-<li>(A) Cut handle to a length of no more than 85mm. Ensure no burs are present to ensure a smooth rotation. </li>
+<li>(A) Cut rod to a length of no more than 85mm. Ensure no burs are present to ensure a smooth rotation. </li>
 <li>(B) Apply a small amount of epoxy into the hole and quickly set the rod in place. </li>
 <li>Let dry before continuing. </li>
 <li>(C) Insert the nylon lock nut into the knob such that the hexagon side is towards the circular hole.  </li>
