@@ -12,7 +12,7 @@ Here are the steps to follow to build the hardware for the MMM Duet System.
 <h2>A. Shopping List</h2>
 
 This list is for 2 devices
-<h3><b>Parts</b><h3>
+### **Parts**
 
 1. (2) Adafruit Huzzah32 – ESP32 Feather Board (pre-soldered) (https://www.digikey.ca/en/products/detail/adafruit-industries-llc/3591/8119805) This board is slightly more expensive than other ESP32 boards but it was chosen because it comes with a battery charger, JST connection, Wi-Fi and Bluetooth Classic/LE support all on one board. </li>
 
