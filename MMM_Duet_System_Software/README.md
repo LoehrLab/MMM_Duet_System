@@ -101,7 +101,7 @@ This subpatch uses text files that lists a) the accompaniment wav file of the so
 For people who want to add their own songs to the system, please go see [Creating Duets from Commercial Recordings](https://github.com/LoehrLab/MMM_Duet_System/tree/main/Creating%20Duets%20from%20Commercial%20Recordings#creating-duets-from-commercial-recordings). 
 ## C. DUET FACILITATION COMPONENTS:
 The following components help players synchronize the duets together. Each component can be set to a different level to adjust duet playing difficulty (making it easier or harder to stay in synchrony with the partner). These components were implemented to allow for satisfying duet performance across a wide variety of individual differences in performance ability (e.g., different musical skills, motor constraints, etc.).  
-### <u>Device Speed Calibration (MMM_patch section D)</u>
+### <u>Device Speed Calibration (MMM_patch section E)</u>
 The subpatch SpinSpeedCalibration serves two functions. 
 
 1. You can manually adjust playback to account for players’ preferred and actual spinning speed Since we want to know the spinning speed of the musicboxes, we measure the time it takes to move from one location on the rotary encoder of the musicbox to the next. Then we take a prechosen numerator to be divided by this length of time to find out the spinning speed. This subpatch uses a range of numerators to match a spinning speed to the intended spinning speed of a player. The larger the numerator used, the slower the spinning speed required to match the original audiofile speed. The spinning speed levels shown on the screen range from 0 to 10, with 0 corresponding to the slowest spinning speed, and 10 corresponding to the fastest. The component uses these levels to choose a numerator to divide the input time from the music boxes.   The ‘normal’ preset numerator is 40, but numerators range from 17 – 190 (17, 20, 25, 30, 35, 40, 60, 80, 110, 150, 190). Also, the greater the numerator (the slower the spinning speed), the greater the need for smoothing.  
@@ -110,13 +110,13 @@ The subpatch SpinSpeedCalibration serves two functions.
 
 ![Screenshot of spin speed calibration subpatch](./images/speed_calibration.png)
 
-### <u>Speed Correction (Smoothing Lvl 1) - (MMM_Patch section E)</u>
+### <u>Speed Correction (Smoothing Lvl 1) - (MMM_Patch section F)</u>
 
 A large role of the subpatch Smoov is to protect against dividing by zero. This subpatch uses a feedback loop to diminish the distance of outlier datapoints from the mean. In essence, it keeps a running mean of the last 100 datapoints in order to bring the newest datapoint closer to the running mean. This subpatch was especially important in the early versions of the patch where we were inputting rotational information into the MMM Patch. As we improve the regularity and latency of the input to the MMM Patch this subpatch will become less important, and its aggressiveness should be adjusted accordingly. 
 
 ![Screenshot of speed correction](./images/speed_correction.png)
 
-### <u>Smoothing Correction (MMM_Patch Section G)</u>
+### <u>Smoothing Correction (MMM_Patch Section H)</u>
 
 The purpose of the SmoothingFunction subpatch is to smooth the speed of their musical output relative to the player’s spinning speed. With no smoothing, the speed of the musical output varies with the speed of the player’s spinning. With high levels of smoothing, the speed of the musical output remains stable even if the player’s spinning speed is variable. 
 
@@ -132,15 +132,15 @@ Different levels of smoothing vary the m and n of the above function. Here is an
 The purpose of the Auto-adjust subpatch is to allow for automatic realignment of the two players’ parts if they drift so far apart that they are unlikely to be able to realign with each other simply by adjusting their own spinning speeds. Feedback from early users indicated that moving the accompaniment part to the melody part is less noticeable, so this is always done. Currently, whenever the participants get off by more than 1.5 seconds (66150 samples at 44100) the parts are automatically realigned. The parts are also realigned whenever the parts get off by over 1 second (44100 samples) for 1 second, and off by over .5 seconds (22050 samples) for over 2 seconds (It may appear that the < sign is reversed for these 2 in the patch but they are correct as clocker restarts every time it is banged). The musicbox that has the melody part is known through the r lr function. 
 ![Screenshot of auto-adjust](./images/auto_adjust.png)
 
-In terms of technical implementation of this function, the current sample of the audiofile can be known by tracking the sig~ function, (this tracking is shown in section H. Player switching), summing the samples that have occurred in the signal accumulator, and taking snapshots of this running total. These snapshots are then shown in message boxes (NB: mbox 1 snapshot is shown on the right of the patch while mbox 2 is shown on the left – this has been done as the value in these message boxes become the new value for the other part when realignment is done). E.g. When a realignment request is made to move mbox1 to mbox2, the current sample of mbox2 is fed back into the signal accumulator (**+=~**) of mbox1.  
+In terms of technical implementation of this function, the current sample of the audiofile can be known by tracking the sig~ function, (this tracking is shown in section I. Player switching), summing the samples that have occurred in the signal accumulator, and taking snapshots of this running total. These snapshots are then shown in message boxes (NB: mbox 1 snapshot is shown on the right of the patch while mbox 2 is shown on the left – this has been done as the value in these message boxes become the new value for the other part when realignment is done). E.g. When a realignment request is made to move mbox1 to mbox2, the current sample of mbox2 is fed back into the signal accumulator (**+=~**) of mbox1.  
 
-### <u>Bluetooth Code Processing (MMM_Patch Section I):</u>
+### <u>Bluetooth Code Processing (MMM_Patch Section J):</u>
 
 As the patch doesn’t really know the spinning speed of the musicboxes, it doesn’t really know when players have stopped mid-song. All the MMM patch has is the latest information given to it, which is the last duration recorded between the last 2 points it has seen from the musicbox (which it estimates the current speed from – see spinning speed above). Therefore, an audio-off has been added to allow the audiofile to stop playing when it hasn’t received any new input information. The component takes the smoothingRaw value and outputs it as audio-off. When the player is spinning, they are the same. After 320 msec of inactivity, the controller sends a the ASCII characters “/D”. After 640 msec, the controller sends out “/E”. After another 320 msec, at 960 msec, the controller sends out “/F”. The MMM Patch registers this as the ASCII numbers 68, 69, 70 respectively.  When 68, is received, the last smoothingRaw value transitions to 0.3 over 330 msec becoming vidrate. When 69 is received, it transitions from 0.3 to 0. When 70 is received, nothing happens, but this functions to stop the repeated triggering of the transition from 0.3 to 0. 
 
 ![Screenshot of bluetooth code processing](./images/bluetooth_processing.png)
 
-### <u>Signal Processing Component (MMM_Patch Section J):</u>
+### <u>Signal Processing Component (MMM_Patch Section K):</u>
 
 It takes all of the inputs from the components described above (e.g., speed calibration, smoothing correction, song selection, etc.) and uses that information to add the song to the player and adjust the speed and amplitude of the audio file in the music player. 
 

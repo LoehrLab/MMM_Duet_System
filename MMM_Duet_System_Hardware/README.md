@@ -1,4 +1,23 @@
 <h1>MMM Duet System Hardware</h1>
+<h2><u>Important Files and Sections:</u></h2>
+
+### 1. Shopping list (See section A Below)
+### 2. 3D Printing Files (See subfolder Model Files)
+These are the files you will need to 3D print the base and handle for each MMM Duet System device. 
+- Base: 2022_base_model (.f3z, .stl) 
+    - Component parts: 
+        - BaseBottom (.3mf, .obj, .stl) 
+        - BaseTop (.3mf, .obj, .stl) 
+        - HandleBase (.3mf, .obj, .stl) 
+- Handle: Crank50mm_solid(.f3z, .stl) 
+    - Component parts: 
+        - SolidHandle (.3mf, .obj, .stl) 
+        - Knob (.3mf, .obj, .stl) 
+
+### 3. Arduino Sketch (See subfolder Controller Files)
+An Arduino ‘sketch’ is a file that contains the code that runs on an Arduino board (here, the ESP 32). This sketch needs to be loaded onto the Arduino board as detailed in Assembly Step 1. 
+### 4. Assembly Instructions (See section B Below)
+
 
 <h2><u>Overview:</u></h2>
 Here are the steps to follow to build the hardware for the MMM Duet System.
