@@ -81,8 +81,8 @@ This list is for 2 devices
 18. Hot glue gun (optional) 
 19. Heat gun 
 
-<h2>B. Assembly Instructions</h2>
-<h3><b>Step 1: Load the Arduino sketch onto the ESP32 board. </b><h3>
+## B. Assembly Instructions
+### **Step 1: Load the Arduino sketch onto the ESP32 board.**
 The following instructions explain how to load the Arduino sketch onto the ESP32 Board. We used the Arduino IDE (Integrated Development Environment; see below) due to our familiarity with the software and broad community support.  
 
 1. **Install Drivers**
@@ -116,7 +116,7 @@ https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establis
 - Under Sketch, select Upload to upload the sketch to the ESP32 board.  
 
 
-<h3><b>Step 2: Wiring </b><h3>
+### **Step 2: Wiring**
 
 Below is the wiring schematic. Rather than wire directly to the ESP32 board, we chose to wire to a set of headers soldered to a 30mmx70mm protoboard to prevent damaging the ESP32 board with any soldering mistakes and facilitate reuse of the ESP32 board within the lab.
 
@@ -135,7 +135,7 @@ The breadboard diagram below can be used to furhter facilitate conceptualizing o
 
 
 
-<h3><b>Step 3: Put all the pieces together</b><h3>
+<h3><b>Step 3: Put all the pieces together</b></h3>
 Follow the instructions below to create each MMM Duet System controller.
 <table>
 <tr valign="top">
