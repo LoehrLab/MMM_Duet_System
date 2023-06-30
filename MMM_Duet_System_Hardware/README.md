@@ -19,7 +19,7 @@ An Arduino ‘sketch’ is a file that contains the code that runs on an Arduino
 ### 4. Assembly Instructions (See section B Below)
 
 
-<h2><u>Overview:</u></h2>
+## <u>Overview:</u>
 Here are the steps to follow to build the hardware for the MMM Duet System.
 <ol>
 <li>Purchase items in the Shopping List file.</li>
@@ -61,7 +61,7 @@ This list is for 2 devices
 
 14. (2) Momentary switches (https://www.amazon.ca/gp/product/B07DS8VSZ1/)
 
-<h3><b>Supplies</b><h3>
+### <b>Supplies</b>
 
 15. 0.6mm Solder (https://www.amazon.ca/gp/product/B071XVPJVX/)  
 
@@ -73,7 +73,7 @@ This list is for 2 devices
 18. 22AWG Solid Core Wire (https://www.digikey.ca/en/products/detail/adafruit-industries-llc/1311/6198255)
 19. Solder Seal Butt Connector (https://www.amazon.ca/NORJIN-Connectors-Waterproof-Electrical-Automotive/dp/B09WQWQQW9/)
 
-<h3><b>Tools</b><h3>
+### <b>Tools</b>
 
 15. Wire Crimper 
 16. Voltage Meter (optional) 
