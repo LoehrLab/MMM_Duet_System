@@ -64,22 +64,18 @@ This list is for 2 devices
 ### <b>Supplies</b>
 
 15. 0.6mm Solder (https://www.amazon.ca/gp/product/B071XVPJVX/)  
-
-
-16. Epoxy (https://www.amazon.ca/Gorilla-Epoxy-85-oz-Clear/dp/B001Z3C3AG/) 
-</li> 
-
+16. Epoxy (https://www.amazon.ca/Gorilla-Epoxy-85-oz-Clear/dp/B001Z3C3AG/)
 17. Filament (depends on printer and desired properties; we used https://us.polymaker.com/products/polylite-asa?variant=39574343221305)  
 18. 22AWG Solid Core Wire (https://www.digikey.ca/en/products/detail/adafruit-industries-llc/1311/6198255)
 19. Solder Seal Butt Connector (https://www.amazon.ca/NORJIN-Connectors-Waterproof-Electrical-Automotive/dp/B09WQWQQW9/)
 
 ### <b>Tools</b>
 
-15. Wire Crimper 
-16. Voltage Meter (optional) 
-17. Screwdriver that matches bolt/screws 
-18. Hot glue gun (optional) 
-19. Heat gun 
+20. Wire Crimper 
+21. Voltage Meter (optional) 
+22. Screwdriver that matches bolt/screws 
+23. Hot glue gun (optional) 
+24. Heat gun 
 
 ## B. Assembly Instructions
 ### **Step 1: Load the Arduino sketch onto the ESP32 board.**
