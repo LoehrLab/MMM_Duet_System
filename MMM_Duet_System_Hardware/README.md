@@ -108,7 +108,7 @@ The following instructions explain how to load the Arduino sketch onto the ESP32
 
 ### **Step 2: Wiring**
 
-Below is the wiring schematic. Rather than wire directly to the ESP32 board, we chose to wire to a set of headers soldered to a 30mmx70mm protoboard to prevent damaging the ESP32 board with any soldering mistakes and facilitate reuse of the ESP32 board within the lab. (See supplemental information for soldering instructions )
+Below is the wiring schematic. Rather than wire directly to the ESP32 board, we chose to wire to a set of headers soldered to a 30mmx70mm protoboard to prevent damaging the ESP32 board with any soldering mistakes and facilitate reuse of the ESP32 board within the lab (See supplemental information for [soldering instructions](#supplemental-information)).
 
 ### Special considerations and recommendations:
 
