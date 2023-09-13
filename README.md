@@ -34,3 +34,5 @@ Here are the steps to follow to build your MMM Duet System.
 <h3><u>Information for researchers and developers:</u></h3>
 <p>To build the MMM Duet System, follow the same instructions as provided for users. Then consult the additional documentation we have provided for developers for further information about how the hardware and software were built and can be modified.</p>
 <p>Acknowledgements: Development of the MMM Duet System was supported in part by SHRF, CABHI, and USask Innovation Enterprises.</p>
+
+<p>Please cite this work as follows: Christensen, J., Kauenhofen, S., Loehr, J., Lang, J., Peacock, S., & Nicol, J. (2023). MMM Duet System: New accessible musical technology for people living with dementia. In <i>Proceedings of the 18th International Audio Mostly Conference (Audio Mostly ’23)</i>. Association for Computing Machinery, New York, USA, 7 pages.</p>
