@@ -30,7 +30,7 @@ Here are the steps to follow to build the hardware for the MMM Duet System.
 
 1. Purchase items in the Shopping List file.
 2. Use a 3D printer to print the components.
-3. Put the hardware together by following the steps in the Assembly Instructions [Assembly Instructions](#b-assembly-instructions).
+3. Put the hardware together by following the steps in the [Assembly Instructions](#b-assembly-instructions).
 
 
 <h2>A. Shopping List</h2>
