@@ -27,11 +27,11 @@ An Arduino ‘sketch’ is a file that contains the code that runs on an Arduino
 
 Here are the steps to follow to build the hardware for the MMM Duet System.
 
-<ol>
-<li>Purchase items in the Shopping List file.</li>
-<li>Use a 3D printer to print the components.</li>
-<li>Put the hardware together by following the steps in the Assembly Instructions file.</li>
-</ol>
+
+1. Purchase items in the Shopping List file.
+2. Use a 3D printer to print the components.
+3. Put the hardware together by following the steps in the Assembly Instructions [Assembly Instructions](#b-assembly-instructions).
+
 
 <h2>A. Shopping List</h2>
 
